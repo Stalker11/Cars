@@ -7,5 +7,7 @@ enum class SupportCars{
     RENO,
     ZAZ,
     LAZ,
-    MAZ
+    MAZ,
+    INFINITY,
+    IKARUS
 }
