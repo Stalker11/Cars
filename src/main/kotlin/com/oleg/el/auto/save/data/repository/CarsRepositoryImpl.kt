@@ -44,7 +44,7 @@ class CarsRepositoryImpl(
 
     override fun update(id: Long, data: Car) {
         jdbcTemplate.update(
-            "update cars model = :model, age = :age, price = :price where id = :id",
+            "update cars set model = :model, age = :age, price = :price where id = :id",
             mapOf(
                 "id" to id,
                 "model" to data.model.name,
@@ -52,6 +52,15 @@ class CarsRepositoryImpl(
                 "price" to data.price
             )
         )
+        /*jdbcTemplate.update(
+            "update cars model = :model, age = :age, price = :price where id = :id",
+            mapOf(
+                "id" to id,
+                "model" to data.model.name,
+                "age" to data.age,
+                "price" to data.price
+            )
+        )*/
     }
 
     override fun delete(id: Long) {
