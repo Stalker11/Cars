@@ -17,4 +17,8 @@ class CarServiceImpl(private val carsRepository: CarsRepository): CarsService {
     override fun updateCar(id: Long, car: Car) {
         carsRepository.update(id, car)
     }
+
+    override fun getCarById(id: Long): Car? {
+       return carsRepository.getById(id)
+    }
 }

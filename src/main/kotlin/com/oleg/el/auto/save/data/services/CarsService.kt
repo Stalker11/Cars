@@ -6,4 +6,5 @@ interface CarsService {
     fun getAllAvailableCars():List<Car>
     fun createCar(car: Car)
     fun updateCar(id: Long, car: Car)
+    fun getCarById(id: Long): Car?
 }
