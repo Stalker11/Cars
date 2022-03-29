@@ -8,16 +8,17 @@ import javax.persistence.*
 
 //https://www.youtube.com/watch?v=QwQuro7ekvc
 @Entity
+//@Table(name = "app_user")
 data class AppUser(
     @Id
-    @SequenceGenerator(
+    /*@SequenceGenerator(
         name = "user_sequence",
         sequenceName = "user_sequence",
         allocationSize = 1
-    )
+    )*/
     @GeneratedValue(
         strategy = GenerationType.SEQUENCE,
-        generator = "user_sequence"
+        //generator = "user_sequence"
     )
     private var id: Long? = -1,
     private var name: String = "",
@@ -37,7 +38,7 @@ data class AppUser(
 
     override fun getPassword() = password
 
-    override fun getUsername() = userName
+    override fun getUsername() = email
 
     override fun isAccountNonExpired() = true
 
@@ -46,4 +47,5 @@ data class AppUser(
     override fun isCredentialsNonExpired() = true
 
     override fun isEnabled() = enabled
+
 }
