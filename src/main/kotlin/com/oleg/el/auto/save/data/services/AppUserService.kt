@@ -3,7 +3,6 @@ package com.oleg.el.auto.save.data.services
 import com.oleg.el.auto.save.data.auth.AppUser
 import com.oleg.el.auto.save.data.auth.token.ConfirmationToken
 import com.oleg.el.auto.save.data.repository.UserRepository
-import lombok.AllArgsConstructor
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.security.core.userdetails.UserDetails
 import org.springframework.security.core.userdetails.UserDetailsService
@@ -49,5 +48,8 @@ class AppUserService() : UserDetailsService {
         confirmationTokenServiceImpl.saveConfirmationToken(confirmationToken)
         //TODO send the email
         return token
+    }
+    fun enableAppUser(email: String?): Int {
+        return userRepository.enableAppUser(email)
     }
 }

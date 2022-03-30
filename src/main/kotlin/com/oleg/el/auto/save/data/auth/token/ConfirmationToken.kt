@@ -29,5 +29,5 @@ data class ConfirmationToken(
         nullable = false,
         name = "app_user_id"
     )
-    private val appUser: AppUser
+    val appUser: AppUser
 )
